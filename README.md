@@ -68,7 +68,3 @@ The goal was not just to visualize data, but to **enable decision-making through
 Thanks to Dhaval Patel, Hemanand Vadivel, and the Codebasics team for guidance and learning resources.
 
 ---
-
-## 🔗 Project Link
-
-(Add your Power BI / Drive link here)
