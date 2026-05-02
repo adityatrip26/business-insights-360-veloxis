@@ -1,0 +1,942 @@
+Home_Executive_Card = 
+VAR _ns = [NS $]
+VAR _np = [Net_profit %]
+VAR _npColor = IF(_np >= 0, "#00B050", "#FF4444")
+RETURN
+"<div style='background:linear-gradient(135deg,#1E2A3A 60%,#162030 100%);
+  border-left:5px solid #FF4444;padding:16px 18px;
+  border-radius:6px;height:100%;position:relative;overflow:hidden'>
+  <div style='position:absolute;top:-15px;right:-15px;width:80px;
+  height:80px;border-radius:50%;background:rgba(255,68,68,0.08)'></div>
+  <h3 style='color:#FFFFFF;font-size:16px;
+  font-weight:bold;margin:0 0 8px 0'>Top Level Business Summary</h3>
+  <div style='display:flex;gap:12px;margin-bottom:10px'>
+    <span style='color:#1E90FF;font-size:14px;font-weight:bold'>"
+    & FORMAT(_ns/1000000000,"$#,##0.00") & "bn NS</span>
+    <span style='color:" & _npColor & ";font-size:14px;font-weight:bold'>"
+    & FORMAT(_np,"0.00%") & " NP</span>
+  </div>
+  <p style='color:#A0AEC0;font-size:13px;margin:0;line-height:1.6'>
+  Consolidated executive insights across all business dimensions</p>
+  <div style='margin-top:10px;background:#0F1923;
+  border-radius:6px;height:3px'>
+  <div style='background:#FF4444;height:3px;
+  border-radius:6px;width:90%'></div></div>
+</div>"
+
+
+Home_Finance_Card = 
+VAR _np = [Net_profit %]
+VAR _npColor = IF(_np >= 0, "#00B050", "#FF4444")
+RETURN
+"<div style='background:linear-gradient(135deg,#1E2A3A 60%,#162030 100%);
+  border-left:5px solid #1E90FF;padding:16px 18px;
+  border-radius:6px;height:100%;position:relative;overflow:hidden'>
+  <div style='position:absolute;top:-15px;right:-15px;width:80px;
+  height:80px;border-radius:50%;background:rgba(30,144,255,0.08)'></div>
+  <h3 style='color:#FFFFFF;font-size:16px;
+  font-weight:bold;margin:0 0 8px 0'>P&L Statement</h3>
+  <div style='display:flex;gap:12px;margin-bottom:10px'>
+    <span style='color:#FFA500;font-size:14px;font-weight:bold'>"
+    & FORMAT([GM %],"0.00%") & " GM</span>
+    <span style='color:" & _npColor & ";font-size:14px;font-weight:bold'>"
+    & FORMAT(_np,"0.00%") & " NP</span>
+  </div>
+  <p style='color:#A0AEC0;font-size:13px;margin:0;line-height:1.6'>
+  Analyze P&L across customers, products and regions over time</p>
+  <div style='margin-top:10px;background:#0F1923;
+  border-radius:6px;height:3px'>
+  <div style='background:#1E90FF;height:3px;
+  border-radius:6px;width:70%'></div></div>
+</div>"
+
+
+Home_Info_Card = 
+"<div style='background:linear-gradient(135deg,#1E2A3A 60%,#162030 100%);
+  border-left:5px solid #A0AEC0;padding:16px 18px;
+  border-radius:6px;height:100%;position:relative;overflow:hidden'>
+  <div style='position:absolute;top:-15px;right:-15px;width:80px;
+  height:80px;border-radius:50%;background:rgba(160,174,192,0.08)'></div>
+  <h3 style='color:#FFFFFF;font-size:16px;
+  font-weight:bold;margin:0 0 8px 0'>User Guide & Help</h3>
+  <div style='margin-bottom:10px'>
+    <span style='color:#A0AEC0;font-size:14px'>
+    Values in Dollars & Millions</span>
+  </div>
+  <p style='color:#A0AEC0;font-size:13px;margin:0;line-height:1.6'>
+  Download user manual and connect with support specialist</p>
+  <div style='margin-top:10px;background:#0F1923;
+  border-radius:6px;height:3px'>
+  <div style='background:#A0AEC0;height:3px;
+  border-radius:6px;width:40%'></div></div>
+</div>"
+
+
+Home_Marketing_Card = 
+VAR _np = [Net_profit %]
+VAR _npColor = IF(_np >= 0, "#00B050", "#FF4444")
+RETURN
+"<div style='background:linear-gradient(135deg,#1E2A3A 60%,#162030 100%);
+  border-left:5px solid #9B59B6;padding:16px 18px;
+  border-radius:6px;height:100%;position:relative;overflow:hidden'>
+  <div style='position:absolute;top:-15px;right:-15px;width:80px;
+  height:80px;border-radius:50%;background:rgba(155,89,182,0.08)'></div>
+  <h3 style='color:#FFFFFF;font-size:16px;
+  font-weight:bold;margin:0 0 8px 0'>Segment & Market Analysis</h3>
+  <div style='display:flex;gap:12px;margin-bottom:10px'>
+    <span style='color:#FFA500;font-size:14px;font-weight:bold'>"
+    & FORMAT([GM %],"0.00%") & " GM</span>
+    <span style='color:" & _npColor & ";font-size:14px;font-weight:bold'>"
+    & FORMAT(_np,"0.00%") & " NP</span>
+  </div>
+  <p style='color:#A0AEC0;font-size:13px;margin:0;line-height:1.6'>
+  Division performance matrix and unit economics by segment</p>
+  <div style='margin-top:10px;background:#0F1923;
+  border-radius:6px;height:3px'>
+  <div style='background:#9B59B6;height:3px;
+  border-radius:6px;width:60%'></div></div>
+</div>"
+
+
+Home_Sales_Card = 
+VAR _ns = [NS $]
+VAR _gm = [GM %]
+RETURN
+"<div style='background:linear-gradient(135deg,#1E2A3A 60%,#162030 100%);
+  border-left:5px solid #00B050;padding:16px 18px;
+  border-radius:6px;height:100%;position:relative;overflow:hidden'>
+  <div style='position:absolute;top:-15px;right:-15px;width:80px;
+  height:80px;border-radius:50%;background:rgba(0,176,80,0.08)'></div>
+  <h3 style='color:#FFFFFF;font-size:16px;
+  font-weight:bold;margin:0 0 8px 0'>Sales Analytics</h3>
+  <div style='display:flex;gap:12px;margin-bottom:10px'>
+    <span style='color:#1E90FF;font-size:14px;font-weight:bold'>"
+    & FORMAT(_ns/1000000000,"$#,##0.00") & "bn NS</span>
+    <span style='color:#FFA500;font-size:14px;font-weight:bold'>"
+    & FORMAT(_gm,"0.00%") & " GM</span>
+  </div>
+  <p style='color:#A0AEC0;font-size:13px;margin:0;line-height:1.6'>
+  Performance matrix and top customer analysis by revenue and margin</p>
+  <div style='margin-top:10px;background:#0F1923;
+  border-radius:6px;height:3px'>
+  <div style='background:#00B050;height:3px;
+  border-radius:6px;width:85%'></div></div>
+</div>"
+
+
+Home_SupplyChain_Card = 
+VAR _fa = [Forecast Accuracy %]
+VAR _faColor = IF(_fa >= 0.85, "#00B050", IF(_fa >= 0.80, "#FFA500", "#FF4444"))
+RETURN
+"<div style='background:linear-gradient(135deg,#1E2A3A 60%,#162030 100%);
+  border-left:5px solid #FFA500;padding:16px 18px;
+  border-radius:6px;height:100%;position:relative;overflow:hidden'>
+  <div style='position:absolute;top:-15px;right:-15px;width:80px;
+  height:80px;border-radius:50%;background:rgba(255,165,0,0.08)'></div>
+  <h3 style='color:#FFFFFF;font-size:16px;
+  font-weight:bold;margin:0 0 8px 0'>Forecast & Risk Analysis</h3>
+  <div style='display:flex;gap:12px;margin-bottom:10px'>
+    <span style='color:" & _faColor & ";font-size:14px;font-weight:bold'>"
+    & FORMAT(_fa,"0.00%") & " FA</span>
+    <span style='color:#FF4444;font-size:14px;font-weight:bold'>"
+    & FORMAT([Net Error]/1000000,"#,##0.0M") & " Net Err</span>
+  </div>
+  <p style='color:#A0AEC0;font-size:13px;margin:0;line-height:1.6'>
+  Forecast accuracy and net error trends by segment and customer</p>
+  <div style='margin-top:10px;background:#0F1923;
+  border-radius:6px;height:3px'>
+  <div style='background:#FFA500;height:3px;
+  border-radius:6px;width:" & FORMAT(MIN(_fa*100,100),"0") & "%'></div></div>
+</div>"
+
+
+Hero_Exec_HTML = 
+VAR _selectedYear = SELECTEDVALUE(fiscal_yr[Fy_desc])
+VAR _ns = [NS $]
+VAR _gm = [GM %]
+VAR _np = [Net_profit %]
+VAR _fa = [Forecast Accuracy %]
+VAR _nsBM = [NS $ BM]
+VAR _nsGrowth = DIVIDE(_ns - _nsBM, _nsBM)
+VAR _borderColor = IF(_np >= 0, "#00B050", "#FF4444")
+VAR _bgGlow = IF(_np >= 0, "#0A1F0F", "#1F0A0A")
+
+VAR _topGMZone = 
+    CALCULATE(
+        SELECTEDVALUE(dim_market[sub_zone]),
+        TOPN(1, ALL(dim_market[sub_zone]), [GM %], DESC)
+    )
+VAR _topGMVal = 
+    CALCULATE(
+        [GM %],
+        TOPN(1, ALL(dim_market[sub_zone]), [GM %], DESC)
+    )
+
+VAR _headline = SWITCH(
+    _selectedYear,
+    "2022 EST", "<span style='color:#00B050'>Revenue exploded 353%.</span> <span style='color:#FF4444'>Profit didn't get the memo.</span>",
+    "2021", "<span style='color:#FFA500'>The world came back.</span> <span style='color:#FF4444'>But costs came back harder.</span>",
+    "2020", "<span style='color:#FF4444'>COVID year. Everything broke.</span> <span style='color:#FFA500'>Margins surprisingly held.</span>",
+    "2019", "<span style='color:#00B050'>Small. Lean. The only year we actually made money.</span>",
+    "<span style='color:#A0AEC0'>Pick a year. See the real story.</span>"
+)
+
+VAR _story = SWITCH(
+    _selectedYear,
+    "2022 EST", "We grew like crazy — $3.74bn in sales, up 353% vs benchmark. But here's the uncomfortable truth: Operational Expenses surged 447% and Freight costs exploded 355%. Every dollar of new revenue came with a bigger cost attached. GM improved to 38.08% which is actually good — the product mix is healthy. The problem isn't what we sell. It's what it costs us to sell it.",
+    "2021", "Post-COVID rebound was real — revenue tripled vs 2020. But profitability stayed negative at -6.63% NP. Why? Because as revenue recovered, so did every cost line. NA region was the star at 44.97% GM. India dragged margins at 32% GM. The business was healing but not yet healthy.",
+    "2020", "Lockdowns hit hard. $267M NS — smallest revenue year after 2019. And yet GM held at 37.1%. That's actually impressive. It means our product mix is resilient even under pressure. Spain and Norway posted positive NP% — proof that the right markets can survive a crisis. The real damage was in South Korea and Bangladesh.",
+    "2019", "This is the year we keep going back to. $111M revenue — tiny by today's standards — but 2.21% NP, 41.2% GM, 86.45% Forecast Accuracy. Everything was in balance. As we scaled, we lost margin discipline. The 2019 playbook is still the template for what good looks like.",
+    "Select a year to read the business story behind the numbers."
+)
+
+VAR _h1 = SWITCH(
+    _selectedYear,
+    "2022 EST", "🔴 NP at -13.98% — worst in 4 years",
+    "2021", "🟡 NP improved from -0.85% to -6.63%... wait",
+    "2020", "🟢 GM held at 37.1% despite COVID",
+    "2019", "🟢 Only profitable year — 2.21% NP",
+    ""
+)
+VAR _h2 = SWITCH(
+    _selectedYear,
+    "2022 EST", "🟢 " & _topGMZone & " leads GM at " & FORMAT(_topGMVal,"0.0%"),
+    "2021", "🟢 NA region 44.97% GM — bright spot",
+    "2020", "🟢 Spain & Norway — only positive NP markets",
+    "2019", "🟢 FA at 86.45% — best forecast year",
+    ""
+)
+VAR _h3 = SWITCH(
+    _selectedYear,
+    "2022 EST", "🟡 FA 81.17% — forecast needs improvement",
+    "2021", "🔴 India 32% GM — margin drag on portfolio",
+    "2020", "🔴 Bangladesh & South Korea — worst markets",
+    "2019", "🔵 41.2% GM — benchmark we should chase",
+    ""
+)
+
+RETURN
+"<div style='background:" & _bgGlow & ";
+  padding:10px 16px;font-family:Segoe UI,sans-serif;
+  border-radius:6px;height:100%;
+  border-left:5px solid " & _borderColor & ";
+  display:flex;flex-direction:row;
+  align-items:center;gap:16px'>
+
+  <div style='width:58%'>
+    <p style='font-size:14px;font-weight:bold;
+    margin:0 0 6px 0;line-height:1.4'>
+    💡 " & _headline & "</p>
+    <p style='color:#C5CDD9;font-size:11px;
+    margin:0;line-height:1.6'>" & _story & "</p>
+  </div>
+
+  <div style='width:1px;background:#2A3F5F;
+  align-self:stretch'></div>
+
+  <div style='width:38%'>
+    <p style='color:#FFF;font-size:12px;
+    font-weight:bold;margin:0 0 8px 0;
+    letter-spacing:0.5px'>⚡ QUICK HIGHLIGHTS</p>
+    <p style='color:#A0AEC0;font-size:11px;
+    line-height:2;margin:0'>
+    " & _h1 & "<br>
+    " & _h2 & "<br>
+    " & _h3 & "
+    </p>
+    <div style='margin-top:10px;
+    border-top:1px solid #2A3F5F;padding-top:8px;
+    display:flex;justify-content:space-between'>
+      <span style='color:#A0AEC0;font-size:10px'>NS: 
+      <span style='color:#1E90FF;font-weight:bold'>" 
+      & FORMAT(_ns/1000000000,"$#,##0.00") & "bn</span></span>
+      <span style='color:#A0AEC0;font-size:10px'>GM: 
+      <span style='color:#FFA500;font-weight:bold'>" 
+      & FORMAT(_gm,"0.00%") & "</span></span>
+      <span style='color:#A0AEC0;font-size:10px'>NP: 
+      <span style='color:" & _borderColor & ";font-weight:bold'>" 
+      & FORMAT(_np,"0.00%") & "</span></span>
+      <span style='color:#A0AEC0;font-size:10px'>FA: 
+      <span style='color:#00B050;font-weight:bold'>" 
+      & FORMAT(_fa,"0.00%") & "</span></span>
+    </div>
+  </div>
+</div>"
+
+
+Hero_Finance_HTML = 
+VAR _ns = [NS $]
+VAR _gm = [GM %]
+VAR _np = [Net_profit %]
+VAR _fa = [Forecast Accuracy %]
+VAR _nsBM = [NS $ BM]
+VAR _nsGrowth = DIVIDE(_ns - _nsBM, _nsBM)
+VAR _borderColor = IF(_np >= 0, "#00B050", "#FF4444")
+VAR _bgGlow = IF(_np >= 0, "#0A1F0F", "#1F0A0A")
+
+VAR _selectedYear = SELECTEDVALUE(fiscal_yr[Fy_desc])
+
+VAR _headline = SWITCH(
+    _selectedYear,
+    "2022 EST", "<span style='color:#00B050'>Revenue Surges 353%</span> <span style='color:#FF4444'>But Costs Destroy Profit</span>",
+    "2021", "<span style='color:#FFA500'>Recovery Underway</span> <span style='color:#FF4444'>But Profitability Still Negative</span>",
+    "2020", "<span style='color:#FF4444'>COVID-19 Crushes Demand</span> <span style='color:#FFA500'>March Dip Was Turning Point</span>",
+    "2019", "<span style='color:#00B050'>Lean But Profitable</span> <span style='color:#1E90FF'>Best NP% Across All Years</span>",
+    "<span style='color:#A0AEC0'>Select a Year to See Insight</span>"
+)
+
+VAR _subtext = SWITCH(
+    _selectedYear,
+    "2022 EST", "Operational Expense up 447% and Freight up 355% wiped out revenue gains. Cost structure needs urgent review.",
+    "2021", "Sales tripled vs 2020 post-COVID rebound but Operational Expenses grew 249% — margin recovery incomplete.",
+    "2020", "COVID lockdowns caused a sharp March dip. Despite low volumes, GM held at 37% showing product mix resilience.",
+    "2019", "Smallest revenue year but only profitable one at 2.21% NP. Low cost base = highest margin efficiency.",
+    "Filter by year to see the story behind the numbers."
+)
+
+VAR _h1 = SWITCH(
+    _selectedYear,
+    "2022 EST", "🔴 NP at -13.98% — worst across all years",
+    "2021", "🟡 GM dropped to 36.49% — below 2019 levels",
+    "2020", "🔴 COVID dip visible — March 2020 lowest point",
+    "2019", "🟢 Only year with positive NP at 2.21%",
+    ""
+)
+
+VAR _h2 = SWITCH(
+    _selectedYear,
+    "2022 EST", "🟢 Gross Margin improved to 38.08% vs BM",
+    "2021", "🟠 Operational Expense surged 249% vs 2020",
+    "2020", "🟢 GM held at 37% despite COVID pressure",
+    "2019", "🟢 GM at 41.20% — highest across all years",
+    ""
+)
+
+VAR _h3 = SWITCH(
+    _selectedYear,
+    "2022 EST", "🟡 Freight Cost up 355% — supply chain stress",
+    "2021", "🟢 Revenue tripled — strong post-COVID rebound",
+    "2020", "🟡 Networking segment only one with negative YoY",
+    "2019", "🔵 NA region drove 19.7% of total revenue",
+    ""
+)
+
+RETURN
+"<div style='background:" & _bgGlow & ";
+  padding:10px 14px;
+  font-family:Segoe UI,sans-serif;
+  border-radius:8px;
+  height:100%;
+  border-left:5px solid " & _borderColor & ";
+  display:flex;
+  justify-content:space-between;
+  align-items:center'>
+  
+  <div style='width:54%'>
+    <p style='font-size:14px;font-weight:600;margin:0 0 6px 0'>💡 " & _headline & "</p>
+    <p style='color:#A0AEC0;font-size:11px;margin:0;line-height:1.5'>" & _subtext & "</p>
+  </div>
+  
+  <div style='width:44%;border-left:2px solid #2A3F5F;padding-left:12px'>
+    <p style='color:#FFF;font-size:11px;font-weight:600;margin:0 0 6px 0'>⚡ QUICK HIGHLIGHTS</p>
+    <p style='color:#A0AEC0;font-size:11px;line-height:1.7;margin:0'>
+    " & _h1 & "<br>
+    " & _h2 & "<br>
+    " & _h3 & "
+    </p>
+  </div>
+</div>"
+
+
+
+Hero_Marketing_HTML = 
+VAR _selectedYear = SELECTEDVALUE(fiscal_yr[Fy_desc])
+VAR _np = [Net_profit %]
+VAR _gm = [GM %]
+VAR _borderColor = IF(_np >= 0, "#00B050", "#FF4444")
+VAR _bgGlow = IF(_np >= 0, "#0A1F0F", "#1F0A0A")
+
+VAR _headline = SWITCH(
+    _selectedYear,
+    "2022 EST", "<span style='color:#FF4444'>All Segments NP Negative</span> <span style='color:#FFA500'>Notebook Leads Revenue at $1.5bn</span>",
+    "2021", "<span style='color:#FFA500'>Recovery Uneven Across Segments</span> <span style='color:#FF4444'>Desktop Worst NP at -2.88%</span>",
+    "2020", "<span style='color:#FF4444'>COVID Crushed All Segments</span> <span style='color:#FFA500'>Storage Hit Hardest at -1.78% NP</span>",
+    "2019", "<span style='color:#00B050'>Only Profitable Year</span> <span style='color:#1E90FF'>Keyboard Top Revenue at $41M</span>",
+    "<span style='color:#A0AEC0'>Select Year to See Insight</span>"
+)
+
+VAR _subtext = SWITCH(
+    _selectedYear,
+    "2022 EST", "Despite 38.1% GM, Operational Expenses destroyed margins across all 6 segments. South Korea dominates with $300M NS but NP deeply negative.",
+    "2021", "Post-COVID bounce visible but costs outpaced recovery. Desktop at -2.88% NP worst performer. NA region strongest at 44.97% GM.",
+    "2020", "COVID lockdowns hit all markets. APAC most resilient. Spain and Norway showed positive NP% — only bright spots in portfolio.",
+    "2019", "Lean cost structure delivered 2.2% NP across board. Indonesia and Philippines led APAC growth. Best margin year on record.",
+    "Filter by year to see marketing story."
+)
+
+VAR _h1 = SWITCH(
+    _selectedYear,
+    "2022 EST", "🔴 Desktop -2.88% NP — worst segment",
+    "2021", "🔴 Storage -1.78% NP — most impacted",
+    "2020", "🟢 Spain 7.7% NP — top market performer",
+    "2019", "🟢 2.2% NP — only profitable year",
+    ""
+)
+VAR _h2 = SWITCH(
+    _selectedYear,
+    "2022 EST", "🟢 Notebook $1.5bn NS — revenue leader",
+    "2021", "🟡 Peripherals recovering — 37.47% GM",
+    "2020", "🟡 Norway 4.4% NP held despite COVID",
+    "2019", "🔵 Keyboard $41M NS — top category",
+    ""
+)
+VAR _h3 = SWITCH(
+    _selectedYear,
+    "2022 EST", "🟡 PC division 61.3% revenue — concentration risk",
+    "2021", "🔵 NA region 44.97% GM — best region",
+    "2020", "🔴 Bangladesh -3.7% NP — worst market",
+    "2019", "🟢 Indonesia 18% NP — APAC star",
+    ""
+)
+
+RETURN
+"<div style='background:" & _bgGlow & ";
+  padding:8px 12px;font-family:Segoe UI,sans-serif;
+  border-radius:6px;height:100%;
+  border-left:4px solid " & _borderColor & ";
+  display:flex;flex-direction:column;
+  justify-content:center'>
+  <p style='font-size:13px;font-weight:bold;
+  margin:0 0 5px 0'>💡 " & _headline & "</p>
+  <p style='color:#A0AEC0;font-size:11px;
+  margin:0 0 7px 0;line-height:1.5'>" & _subtext & "</p>
+  <div style='border-top:1px solid #2A3F5F;
+  padding-top:6px'>
+  <p style='color:#FFF;font-size:11px;
+  font-weight:bold;margin:0 0 4px 0'>⚡ QUICK HIGHLIGHTS</p>
+  <p style='color:#A0AEC0;font-size:11px;
+  line-height:1.8;margin:0'>" & _h1 & "<br>" & _h2 & "<br>" & _h3 & "</p>
+  </div>
+</div>"
+
+
+Hero_Sales_HTML = 
+VAR _selectedYear = SELECTEDVALUE(fiscal_yr[Fy_desc])
+
+VAR _headline = SWITCH(
+    _selectedYear,
+    "2022 EST", "<span style='color:#1E90FF'>Amazon Dominates Revenue</span> <span style='color:#FF4444'>But Margin Under Pressure</span>",
+    "2021", "<span style='color:#00B050'>Strong Post-COVID Rebound</span> <span style='color:#FFA500'>But Customer Margins Squeezed</span>",
+    "2020", "<span style='color:#FF4444'>COVID Hit Sales Hard</span> <span style='color:#FFA500'>Veloxis Exclusive Held Margins</span>",
+    "2019", "<span style='color:#00B050'>Lean Year — Best Margins Across Board</span>",
+    "<span style='color:#A0AEC0'>Select Year to See Insight</span>"
+)
+
+VAR _subtext = SWITCH(
+    _selectedYear,
+    "2022 EST", "Amazon at $496M NS but GM% declining. Veloxis Exclusive delivers 46% GM — best in portfolio. Concentration risk is high.",
+    "2021", "Revenue recovered strongly post-2020. Top 3 customers drive 60%+ of NS. Focus on margin improvement across mid-tier.",
+    "2020", "Volume dropped across all segments. Veloxis Exclusive and Neptune maintained 40%+ GM — resilient premium customers.",
+    "2019", "Smallest revenue base but healthiest margins. Veloxis Exclusive at 48%+ GM. Growth came at cost of margin in later years.",
+    "Filter by year to see sales story."
+)
+
+VAR _h1 = SWITCH(
+    _selectedYear,
+    "2022 EST", "🔴 Amazon ∆GM -1.3% — largest customer declining",
+    "2021", "🟢 Veloxis Exclusive 43.73% GM — top performer",
+    "2020", "🟡 Top 3 customers = 60%+ of total revenue",
+    "2019", "🟢 41%+ avg GM — highest across all years",
+    ""
+)
+VAR _h2 = SWITCH(
+    _selectedYear,
+    "2022 EST", "🟢 Veloxis Exclusive 46% GM — protect this account",
+    "2021", "🔴 Leader GM 34% — lowest among top customers",
+    "2020", "🔴 Flipkart 30.23% GM — below company average",
+    "2019", "🔵 Leader 48% GM — best performing customer",
+    ""
+)
+VAR _h3 = SWITCH(
+    _selectedYear,
+    "2022 EST", "🟡 Neptune 46.7% GM — underexplored growth opportunity",
+    "2021", "🟡 Amazon still top by NS despite margin pressure",
+    "2020", "🟢 Neptune 38.66% GM held despite COVID",
+    "2019", "🟡 Amazon only 35.40% GM — margin improvement needed",
+    ""
+)
+
+VAR _borderColor = IF(_selectedYear = "2019", "#00B050", "#FF4444")
+VAR _bgGlow = IF(_selectedYear = "2019", "#0A1F0F", "#1F0A0A")
+
+RETURN
+"<div style='background:" & _bgGlow & ";
+  padding:8px 14px;font-family:Segoe UI,sans-serif;
+  border-radius:6px;height:100%;
+  border-left:4px solid " & _borderColor & ";
+  display:flex;flex-direction:row;
+  justify-content:space-between;
+  align-items:center;gap:12px'>
+
+  <div style='width:52%'>
+    <p style='font-size:13px;font-weight:bold;
+    margin:0 0 5px 0;line-height:1.4'>💡 " & _headline & "</p>
+    <p style='color:#A0AEC0;font-size:11px;
+    margin:0;line-height:1.5'>" & _subtext & "</p>
+  </div>
+
+  <div style='width:45%;border-left:2px solid #2A3F5F;
+  padding-left:12px'>
+    <p style='color:#FFF;font-size:12px;
+    font-weight:bold;margin:0 0 5px 0'>⚡ QUICK HIGHLIGHTS</p>
+    <p style='color:#A0AEC0;font-size:11px;
+    line-height:1.8;margin:0'>
+    " & _h1 & "<br>
+    " & _h2 & "<br>
+    " & _h3 & "
+    </p>
+  </div>
+</div>"
+
+
+Hero_SupplyChain_HTML = 
+VAR _selectedYear = SELECTEDVALUE(fiscal_yr[Fy_desc])
+VAR _fa = [Forecast Accuracy %]
+VAR _faLY = [Forecast Accuracy % LY]
+VAR _ne = [Net Error]
+VAR _ae = [ABS ERROR]
+VAR _borderColor = IF(_fa >= 0.85, "#00B050", IF(_fa >= 0.80, "#FFA500", "#FF4444"))
+VAR _bgGlow = IF(_fa >= 0.85, "#0A1F0F", IF(_fa >= 0.80, "#1F1500", "#1F0A0A"))
+
+VAR _headline = SWITCH(
+    _selectedYear,
+    "2022 EST", "<span style='color:#FF4444'>We're selling more than we can predict.</span> <span style='color:#FFA500'>Peripherals are the bleeding wound.</span>",
+    "2021", "<span style='color:#FF4444'>February 2021 nearly broke the forecast model.</span> <span style='color:#FFA500'>Recovery demand was impossible to predict.</span>",
+    "2020", "<span style='color:#FFA500'>COVID made forecasting a guessing game.</span> <span style='color:#FF4444'>Networking segment went completely off-script.</span>",
+    "2019", "<span style='color:#00B050'>86.45%. The year the supply chain actually worked.</span> <span style='color:#1E90FF'>This is what good looks like.</span>",
+    "<span style='color:#A0AEC0'>Pick a year. See what the supply chain was dealing with.</span>"
+)
+
+VAR _story = SWITCH(
+    _selectedYear,
+    "2022 EST", "81.17% forecast accuracy sounds okay until you look at Peripherals at -31.83% net error. We consistently under-forecast demand — meaning stockouts, lost sales, unhappy customers. Net Error of -3.5M tells you we sold 3.5M more units than we thought we would. That's not a win. That's a supply chain scrambling to keep up. OOS risk across the board confirms it.",
+    "2021", "The post-COVID demand surge caught everyone off-guard. February 2021 was the worst single month — Net Error plunged to -67K in one month as demand exploded unexpectedly. Full year Net Error of -0.8M with 9.8M absolute error shows the forecast was wildly inconsistent. Some months we over-predicted. Some months we crashed. Accessories at -7% and Networking at 8% pulling in opposite directions.",
+    "2020", "Lockdowns created a bizarre forecasting environment. We over-forecast in some segments — Net Error was positive at +0.5M — meaning we built inventory that didn't move. Excess Inventory risk dominated. But Networking went -28.90% — remote work demand came out of nowhere. Storage at +14.86% shows we overbuilt there. The model had no historical precedent to learn from.",
+    "2019", "This is the benchmark. 86.45% FA, Net Error only +637K, Abs Error just 1.5M. Mostly EI risk which means we slightly over-forecast — far better than the alternative. No segment was badly off. The demand signals were clean, the model responded. As the business scaled post-2019, forecast complexity exploded and accuracy never recovered.",
+    "Select a year to understand the supply chain story."
+)
+
+VAR _h1 = SWITCH(
+    _selectedYear,
+    "2022 EST", "🔴 Peripherals -31.83% net error% — chronic under-forecast",
+    "2021", "🔴 Feb 2021 — single worst forecast month on record",
+    "2020", "🔴 Networking -28.90% — remote work blindspot",
+    "2019", "🟢 86.45% FA — highest accuracy across all years",
+    ""
+)
+VAR _h2 = SWITCH(
+    _selectedYear,
+    "2022 EST", "🟢 Networking 93.06% FA — best segment accuracy",
+    "2021", "🟢 Desktop 84.37% FA — most stable segment",
+    "2020", "🟡 Storage +14.86% — overbuilt, excess inventory",
+    "2019", "🟢 Abs Error only 1.5M — tightest range ever",
+    ""
+)
+VAR _h3 = SWITCH(
+    _selectedYear,
+    "2022 EST", "🟡 FA 81.17% — 5pts below 2019 benchmark",
+    "2021", "🟡 Accessories -7% net error — demand underestimated",
+    "2020", "🟡 FA 72.99% — worst accuracy year on record",
+    "2019", "🔵 Mostly EI risk — slight over-forecast is manageable",
+    ""
+)
+
+RETURN
+"<div style='background:" & _bgGlow & ";
+  padding:8px 16px;font-family:Segoe UI,sans-serif;
+  border-radius:6px;height:100%;
+  border-left:5px solid " & _borderColor & ";
+  display:flex;flex-direction:row;
+  align-items:center;gap:16px'>
+
+  <div style='width:58%'>
+    <p style='font-size:13px;font-weight:bold;
+    margin:0 0 5px 0;line-height:1.4'>
+    💡 " & _headline & "</p>
+    <p style='color:#C5CDD9;font-size:11px;
+    margin:0;line-height:1.6'>" & _story & "</p>
+  </div>
+
+  <div style='width:1px;background:#2A3F5F;
+  align-self:stretch'></div>
+
+  <div style='width:38%'>
+    <p style='color:#FFF;font-size:12px;
+    font-weight:bold;margin:0 0 8px 0;
+    letter-spacing:0.5px'>⚡ QUICK HIGHLIGHTS</p>
+    <p style='color:#A0AEC0;font-size:11px;
+    line-height:1.9;margin:0'>
+    " & _h1 & "<br>
+    " & _h2 & "<br>
+    " & _h3 & "
+    </p>
+    <div style='margin-top:8px;
+    border-top:1px solid #2A3F5F;padding-top:7px;
+    display:flex;justify-content:space-between'>
+      <span style='color:#A0AEC0;font-size:10px'>FA: 
+      <span style='color:" & _borderColor & ";font-weight:bold'>" 
+      & FORMAT(_fa,"0.00%") & "</span></span>
+      <span style='color:#A0AEC0;font-size:10px'>vs LY: 
+      <span style='color:#1E90FF;font-weight:bold'>" 
+      & FORMAT(_faLY,"0.00%") & "</span></span>
+      <span style='color:#A0AEC0;font-size:10px'>Net Err: 
+      <span style='color:#FF4444;font-weight:bold'>" 
+      & FORMAT(_ne/1000000,"#,##0.0M") & "</span></span>
+      <span style='color:#A0AEC0;font-size:10px'>Abs Err: 
+      <span style='color:#FFA500;font-weight:bold'>" 
+      & FORMAT(_ae/1000000,"#,##0.0M") & "</span></span>
+    </div>
+  </div>
+</div>"
+
+
+KPI_AbsError_HTML = 
+VAR _val = [ABS ERROR]
+VAR _bm = [Abs error LY]
+VAR _diff = _val - _bm
+VAR _arrow = IF(_diff >= 0, "↑", "↓")
+VAR _color = IF(_diff >= 0, "#FF0000", "#00B050")
+VAR _diffpct = FORMAT(ABS(_diff)/1000000, "#,##0.0M")
+VAR _progress = FORMAT(MIN(ABS(_val)/1000000 * 100, 100), "0")
+
+VAR _bmline = IF(
+    ISBLANK(_bm),
+    "<p style='color:#888;font-size:13px;margin:6px 0 0 0'>No LY available</p>",
+    "<p style='color:" & _color & ";font-size:13px;margin:6px 0 0 0'>" & _arrow & " " & _diffpct & " vs LY</p>"
+)
+
+RETURN
+"<div style='border-left:6px solid #FFA500;
+  background:linear-gradient(135deg,#1E2A3A 60%,#162030 100%);
+  padding:18px 20px;font-family:Segoe UI,sans-serif;
+  height:100%;position:relative;overflow:hidden'>
+  
+  <div style='position:absolute;top:-20px;right:-20px;
+  width:100px;height:100px;border-radius:50%;
+  background:rgba(255,165,0,0.08)'></div>
+
+  <div style='position:absolute;bottom:-30px;right:10px;
+  width:60px;height:60px;border-radius:50%;
+  background:rgba(255,165,0,0.05)'></div>
+
+  <p style='color:#A0AEC0;font-size:12px;
+  margin:0 0 6px 0;letter-spacing:1px'>📊 ABS ERROR</p>
+
+  <h2 style='color:#FFA500;font-size:30px;
+  font-weight:bold;margin:0'>" & FORMAT(_val/1000000, "#,##0.0M") & "</h2>"
+  
+  & _bmline &
+
+"<div style='margin-top:10px;background:#0F1923;
+  border-radius:10px;height:4px;width:100%'>
+  <div style='background:#FFA500;height:4px;
+  border-radius:10px;width:" & _progress & "%'></div>
+</div>
+</div>"
+
+
+KPI_Forecast_HTML = 
+VAR _val = [Forecast Accuracy %]
+VAR _bm = [Forecast Accuracy % LY]
+VAR _diff = _val - _bm
+VAR _arrow = IF(_diff >= 0, "↑", "↓")
+VAR _color = IF(_diff >= 0, "#00B050", "#FF0000")
+VAR _diffpct = FORMAT(ABS(_diff), "0.00%")
+VAR _progress = FORMAT(MIN(_val * 100, 100), "0")
+VAR _bmline = IF(
+    ISBLANK(_bm),
+    "<p style='color:#888;font-size:13px;margin:6px 0 0 0'>No LY available</p>",
+    "<p style='color:" & _color & ";font-size:13px;margin:6px 0 0 0'>" & _arrow & " " & _diffpct & " vs LY</p>"
+)
+
+RETURN
+"<div style='border-left:6px solid #00B050;
+  background:linear-gradient(135deg,#1E2A3A 60%,#162030 100%);
+  padding:18px 20px;font-family:Segoe UI,sans-serif;
+  height:100%;position:relative;overflow:hidden'>
+  <div style='position:absolute;top:-20px;right:-20px;
+  width:100px;height:100px;border-radius:50%;
+  background:rgba(0,176,80,0.08)'></div>
+  <div style='position:absolute;bottom:-30px;right:10px;
+  width:60px;height:60px;border-radius:50%;
+  background:rgba(0,176,80,0.05)'></div>
+  <p style='color:#A0AEC0;font-size:12px;
+  margin:0 0 6px 0;letter-spacing:1px'>🎯 FORECAST ACCURACY</p>
+  <h2 style='color:#00B050;font-size:30px;
+  font-weight:bold;margin:0'>" & FORMAT(_val, "0.00%") & "</h2>"
+  & _bmline &
+"<div style='margin-top:10px;background:#0F1923;
+  border-radius:10px;height:4px;width:100%'>
+  <div style='background:#00B050;height:4px;
+  border-radius:10px;width:" & _progress & "%'></div>
+</div>
+</div>"
+
+
+KPI_GM_HTML = 
+VAR _val = [GM %]
+VAR _bm = [GM % BM]
+VAR _diff = _val - _bm
+VAR _arrow = IF(_diff >= 0, "↑", "↓")
+VAR _color = IF(_diff >= 0, "#00B050", "#FF0000")
+VAR _diffpct = FORMAT(ABS(_diff), "0.00%")
+VAR _progress = FORMAT(MIN(_val * 100, 100), "0")
+VAR _bmline = IF(
+    ISBLANK(_bm),
+    "<p style='color:#888;font-size:13px;margin:6px 0 0 0'>No BM available</p>",
+    "<p style='color:" & _color & ";font-size:13px;margin:6px 0 0 0'>" & _arrow & " " & _diffpct & " vs BM</p>"
+)
+
+RETURN
+"<div style='border-left:6px solid #FFA500;
+  background:linear-gradient(135deg,#1E2A3A 60%,#162030 100%);
+  padding:18px 20px;font-family:Segoe UI,sans-serif;
+  height:100%;position:relative;overflow:hidden'>
+  <div style='position:absolute;top:-20px;right:-20px;
+  width:100px;height:100px;border-radius:50%;
+  background:rgba(255,165,0,0.08)'></div>
+  <div style='position:absolute;bottom:-30px;right:10px;
+  width:60px;height:60px;border-radius:50%;
+  background:rgba(255,165,0,0.05)'></div>
+  <p style='color:#A0AEC0;font-size:12px;
+  margin:0 0 6px 0;letter-spacing:1px'>📊 GROSS MARGIN %</p>
+  <h2 style='color:#FFA500;font-size:30px;
+  font-weight:bold;margin:0'>" & FORMAT(_val, "0.00%") & "</h2>"
+  & _bmline &
+"<div style='margin-top:10px;background:#0F1923;
+  border-radius:10px;height:4px;width:100%'>
+  <div style='background:#FFA500;height:4px;
+  border-radius:10px;width:" & _progress & "%'></div>
+</div>
+</div>"
+
+
+KPI_NetError_HTML = 
+VAR _val = [Net Error]
+VAR _bm = [net error LY]
+VAR _diff = _val - _bm
+VAR _arrow = IF(_diff >= 0, "↑", "↓")
+VAR _color = IF(_diff >= 0, "#FF0000", "#00B050")
+VAR _diffpct = FORMAT(ABS(_diff)/1000000, "#,##0.0M")
+VAR _progress = FORMAT(MIN(ABS(_val)/1000000 * 100, 100), "0")
+VAR _valColor = IF(_val >= 0, "#FF4444", "#00B050")
+
+VAR _bmline = IF(
+    ISBLANK(_bm),
+    "<p style='color:#888;font-size:13px;margin:6px 0 0 0'>No LY available</p>",
+    "<p style='color:" & _color & ";font-size:13px;margin:6px 0 0 0'>" & _arrow & " " & _diffpct & " vs LY</p>"
+)
+
+RETURN
+"<div style='border-left:6px solid #FF4444;
+  background:linear-gradient(135deg,#1E2A3A 60%,#162030 100%);
+  padding:18px 20px;font-family:Segoe UI,sans-serif;
+  height:100%;position:relative;overflow:hidden'>
+
+  <div style='position:absolute;top:-20px;right:-20px;
+  width:100px;height:100px;border-radius:50%;
+  background:rgba(255,68,68,0.08)'></div>
+
+  <div style='position:absolute;bottom:-30px;right:10px;
+  width:60px;height:60px;border-radius:50%;
+  background:rgba(255,68,68,0.05)'></div>
+
+  <p style='color:#A0AEC0;font-size:12px;
+  margin:0 0 6px 0;letter-spacing:1px'>📉 NET ERROR</p>
+
+  <h2 style='color:" & _valColor & ";font-size:30px;
+  font-weight:bold;margin:0'>" & FORMAT(_val/1000000, "#,##0.0M") & "</h2>"
+  
+  & _bmline &
+
+"<div style='margin-top:10px;background:#0F1923;
+  border-radius:10px;height:4px;width:100%'>
+  <div style='background:#FF4444;height:4px;
+  border-radius:10px;width:" & _progress & "%'></div>
+</div>
+</div>"
+
+
+
+KPI_NetSales_HTML = 
+VAR _val = [NS $]
+VAR _bm = [NS $ BM]
+VAR _diff = DIVIDE(_val - _bm, _bm)
+VAR _arrow = IF(_diff >= 0, "↑", "↓")
+VAR _color = IF(_diff >= 0, "#00B050", "#FF0000")
+VAR _diffpct = FORMAT(ABS(_diff), "0.00%")
+VAR _progress = FORMAT(MIN(ABS(_diff) * 100, 100), "0")
+VAR _bmline = IF(
+    ISBLANK(_bm),
+    "<p style='color:#888;font-size:13px;margin:6px 0 0 0'>No BM available</p>",
+    "<p style='color:" & _color & ";font-size:13px;margin:6px 0 0 0'>" & _arrow & " " & _diffpct & " vs BM</p>"
+)
+
+RETURN
+"<div style='border-left:6px solid #1E90FF;
+  background:linear-gradient(135deg,#1E2A3A 60%,#162030 100%);
+  padding:18px 20px;font-family:Segoe UI,sans-serif;
+  height:100%;position:relative;overflow:hidden'>
+  <div style='position:absolute;top:-20px;right:-20px;
+  width:100px;height:100px;border-radius:50%;
+  background:rgba(30,144,255,0.08)'></div>
+  <div style='position:absolute;bottom:-30px;right:10px;
+  width:60px;height:60px;border-radius:50%;
+  background:rgba(30,144,255,0.05)'></div>
+  <p style='color:#A0AEC0;font-size:12px;
+  margin:0 0 6px 0;letter-spacing:1px'>💰 NET SALES</p>
+  <h2 style='color:#1E90FF;font-size:30px;
+  font-weight:bold;margin:0'>" & FORMAT(_val/1000000000, "$#,##0.00") & "bn</h2>"
+  & _bmline &
+"<div style='margin-top:10px;background:#0F1923;
+  border-radius:10px;height:4px;width:100%'>
+  <div style='background:#1E90FF;height:4px;
+  border-radius:10px;width:" & _progress & "%'></div>
+</div>
+</div>"
+
+
+SubZone_Table_HTML = 
+VAR _table = ADDCOLUMNS(
+    ALL(dim_market[sub_zone]),
+    "NS", [NS $],
+    "RC", [RC %],
+    "GM", [GM %],
+    "NP", [Net_profit %],
+    "MS", [Veloxis MS  %],
+    "Risk", [Risk]
+)
+
+RETURN
+"<div style='background:#1E2A3A;padding:10px;
+  font-family:Segoe UI,sans-serif;border-radius:6px'>
+  <p style='color:#FFF;font-size:11px;font-weight:bold;
+  margin:0 0 8px 0'>Regional Performance & Risk Overview</p>
+  <table style='width:100%;border-collapse:collapse;font-size:10px'>
+    <tr style='color:#A0AEC0;border-bottom:1px solid #2A3F5F'>
+      <td style='padding:4px'>Sub Zone</td>
+      <td style='padding:4px'>NS $</td>
+      <td style='padding:4px'>RC %</td>
+      <td style='padding:4px'>GM %</td>
+      <td style='padding:4px'>NP %</td>
+      <td style='padding:4px'>MS %</td>
+      <td style='padding:4px'>Risk</td>
+    </tr>" &
+    CONCATENATEX(
+        TOPN(20, _table, [NS], DESC),
+        VAR _risk = [Risk]
+        VAR _riskBg = SWITCH(_risk, 
+            "OOS", "#FF4444", 
+            "EI", "#FFA500", 
+            "#2A3F5F")
+        VAR _gmc = IF([GM] >= 0.40, "#00B050", 
+                   IF([GM] >= 0.35, "#FFA500", "#FF4444"))
+        RETURN
+        "<tr style='border-bottom:1px solid #2A3F5F;color:#FFF'>
+          <td style='padding:4px'>" & [sub_zone] & "</td>
+          <td style='padding:4px'>" & FORMAT([NS]/1000000,"$#,##0.0M") & "</td>
+          <td style='padding:4px'>" & FORMAT([RC],"0.0%") & "</td>
+          <td style='padding:4px;color:" & _gmc & ";font-weight:bold'>" & FORMAT([GM],"0.0%") & "</td>
+          <td style='padding:4px;color:" & IF([NP]>=0,"#00B050","#FF4444") & "'>" & FORMAT([NP],"0.0%") & "</td>
+          <td style='padding:4px'>" & FORMAT([MS],"0.00%") & "</td>
+          <td style='padding:4px'>
+            <span style='background:" & _riskBg & ";
+            color:#FFF;padding:2px 6px;border-radius:10px;
+            font-size:9px;font-weight:bold'>" & _risk & "
+            </span>
+          </td>
+        </tr>",
+        ""
+    ) &
+  "</table>
+</div>"
+
+
+
+Filter_Abbreviations = 
+"<div style='
+  background:#152030;
+  padding:10px 12px;
+  font-family:Segoe UI,sans-serif;
+  border-radius:4px;
+  border-top:3px solid #1E90FF;
+  height:100%'>
+  <p style='color:#1E90FF;font-size:13px;
+  font-weight:bold;margin:0 0 8px 0;
+  text-align:center;letter-spacing:1px'>
+  ABBREVIATIONS</p>
+  <table style='width:100%;border-collapse:collapse'>
+    <tr>
+      <td style='color:#A0AEC0;font-size:12px;padding:3px 0'>
+      <span style='color:#1E90FF;font-weight:bold'>BM</span> = Benchmark</td>
+      <td style='color:#A0AEC0;font-size:12px;padding:3px 0'>
+      <span style='color:#1E90FF;font-weight:bold'>LY</span> = Last Year</td>
+    </tr>
+    <tr>
+      <td style='color:#A0AEC0;font-size:12px;padding:3px 0'>
+      <span style='color:#1E90FF;font-weight:bold'>GM</span> = Gross Margin</td>
+      <td style='color:#A0AEC0;font-size:12px;padding:3px 0'>
+      <span style='color:#1E90FF;font-weight:bold'>NS</span> = Net Sales</td>
+    </tr>
+    <tr>
+      <td style='color:#A0AEC0;font-size:12px;padding:3px 0'>
+      <span style='color:#1E90FF;font-weight:bold'>NP</span> = Net Profit</td>
+      <td style='color:#A0AEC0;font-size:12px;padding:3px 0'>
+      <span style='color:#1E90FF;font-weight:bold'>RC</span> = Revenue Contribution</td>
+    </tr>
+    <tr>
+      <td style='color:#A0AEC0;font-size:12px;padding:3px 0'>
+      <span style='color:#1E90FF;font-weight:bold'>MS</span> = Market Share</td>
+      <td style='color:#A0AEC0;font-size:12px;padding:3px 0'>
+      <span style='color:#1E90FF;font-weight:bold'>OOS</span> = Out Of Stock</td>
+    </tr>
+    <tr>
+      <td style='color:#A0AEC0;font-size:12px;padding:3px 0'>
+      <span style='color:#1E90FF;font-weight:bold'>EI</span> = Excess Inventory</td>
+      <td style='color:#A0AEC0;font-size:12px;padding:3px 0'>
+      <span style='color:#1E90FF;font-weight:bold'>YoY</span> = Year over Year</td>
+    </tr>
+    <tr>
+      <td style='color:#A0AEC0;font-size:12px;padding:3px 0'>
+      <span style='color:#1E90FF;font-weight:bold'>COGS</span> = Cost of Goods</td>
+      <td style='color:#A0AEC0;font-size:12px;padding:3px 0'>
+      <span style='color:#1E90FF;font-weight:bold'>OpEx</span> = Operational Exp</td>
+    </tr>
+  </table>
+</div>"
+
+
+
+
+Filter_Panel_Header = 
+"<div style='
+  background:#1E90FF;
+  padding:10px 14px;
+  font-family:Segoe UI,sans-serif;
+  border-radius:4px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px'>
+  <span style='font-size:16px'>🔽</span>
+  <span style='
+    color:#FFFFFF;
+    font-size:24px;
+    font-weight:bold;
+    letter-spacing:1.5px'>
+    FILTERS
+  </span>
+</div>"
+
+
+Unit_Economics_HTML = VAR _grossSales = [GS $] VAR _preInv = [Pre Invoice Deduction $] VAR _nis = [NIS $] VAR _postInv = [Total Post Invoice Deduction $] VAR _ns = [NS $] VAR _cogs = [Total COGS $] VAR _gm = [GM $] VAR _opex = [Operational Expense $] VAR _np = [Net_profit $] VAR _base = _grossSales VAR _w2 = FORMAT(MIN((_nis/_base)*100, 100), "0") VAR _w3 = FORMAT(MIN((_ns/_base)*100, 100), "0") VAR _w4 = FORMAT(MIN((_gm/_base)*100, 100), "0") VAR _w5 = FORMAT(MIN((ABS(_np)/_base)*100, 100), "0") VAR _npColor = IF(_np >= 0, "#00B050", "#FF4444") VAR _npLabel = IF(_np >= 0, "✅ Net Profit", "❌ Net Loss") RETURN " <div style='padding:6px 10px;box-sizing:border-box'> <div style='margin-bottom:6px'> <div style='display:flex;justify-content:space-between;margin-bottom:3px'> <span style='color:#A0AEC0;font-size:15.5px'>💰 Gross Sales</span> <span style='color:#FFFFFF;font-size:15.5px;font-weight:bold'>" & FORMAT(_grossSales/1000000000,"$#,##0.00") & "bn</span> </div> <div style='background:#0F1923;border-radius:5px;height:10px'> <div style='background:#1E90FF;height:10px;border-radius:5px;width:100%'></div> </div> </div> <div style='margin-bottom:4px;padding-left:8px'> <span style='color:#FF4444;font-size:13.5px'>↳ Pre Invoice Deduction: -" & FORMAT(_preInv/1000000,"$#,##0.0M") & "M</span> </div> <div style='margin-bottom:6px'> <div style='display:flex;justify-content:space-between;margin-bottom:3px'> <span style='color:#A0AEC0;font-size:15.5px'>🧾 Net Invoice Sales</span> <span style='color:#FFFFFF;font-size:15.5px;font-weight:bold'>" & FORMAT(_nis/1000000000,"$#,##0.00") & "bn</span> </div> <div style='background:#0F1923;border-radius:5px;height:10px'> <div style='background:#4AABFF;height:10px;border-radius:5px;width:" & _w2 & "%'></div> </div> </div> <div style='margin-bottom:4px;padding-left:8px'> <span style='color:#FF4444;font-size:13.5px'>↳ Post Invoice Deduction: -" & FORMAT(_postInv/1000000,"$#,##0.0M") & "M</span> </div> <div style='margin-bottom:6px'> <div style='display:flex;justify-content:space-between;margin-bottom:3px'> <span style='color:#A0AEC0;font-size:15.5px'>🏷️ Net Sales</span> <span style='color:#FFFFFF;font-size:15.5px;font-weight:bold'>" & FORMAT(_ns/1000000000,"$#,##0.00") & "bn</span> </div> <div style='background:#0F1923;border-radius:5px;height:10px'> <div style='background:#00BFFF;height:10px;border-radius:5px;width:" & _w3 & "%'></div> </div> </div> <div style='margin-bottom:4px;padding-left:8px'> <span style='color:#FF4444;font-size:13.5px'>↳ Total COGS: -" & FORMAT(_cogs/1000000,"$#,##0.0M") & "M</span> </div> <div style='margin-bottom:6px'> <div style='display:flex;justify-content:space-between;margin-bottom:3px'> <span style='color:#A0AEC0;font-size:15.5px'>📊 Gross Margin</span> <span style='color:#FFA500;font-size:15.5px;font-weight:bold'>" & FORMAT(_gm/1000000000,"$#,##0.00") & "bn</span> </div> <div style='background:#0F1923;border-radius:5px;height:10px'> <div style='background:#FFA500;height:10px;border-radius:5px;width:" & _w4 & "%'></div> </div> </div> <div style='margin-bottom:4px;padding-left:8px'> <span style='color:#FF4444;font-size:13.5px'>↳ Operational Expense: -" & FORMAT(ABS(_opex)/1000000,"$#,##0.0M") & "M</span> </div> <div style='margin-bottom:6px'> <div style='display:flex;justify-content:space-between;margin-bottom:3px'> <span style='color:#A0AEC0;font-size:15.5px'>" & _npLabel & "</span> <span style='color:" & _npColor & ";font-size:15.5px;font-weight:bold'>" & FORMAT(_np/1000000,"$#,##0.0M") & "M</span> </div> <div style='background:#0F1923;border-radius:5px;height:10px'> <div style='background:" & _npColor & ";height:10px;border-radius:5px;width:" & _w5 & "%'></div> </div> </div> <div style='border-top:1px solid #2A3F5F;padding-top:6px;display:flex;justify-content:space-between'> <span style='color:#A0AEC0;font-size:14px'>GM%: <span style='color:#FFA500;font-weight:bold'>" & FORMAT([GM %],"0.00%") & "</span></span> <span style='color:#A0AEC0;font-size:14px'>NP%: <span style='color:" & _npColor & ";font-weight:bold'>" & FORMAT([Net_profit %],"0.00%") & "</span></span> <span style='color:#A0AEC0;font-size:14px'>COGS%: <span style='color:#1E90FF;font-weight:bold'>" & FORMAT(DIVIDE(_cogs,_grossSales),"0.00%") & "</span></span> </div> </div>"

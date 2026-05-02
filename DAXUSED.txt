@@ -1,0 +1,86 @@
+GM $ = [NS $]-[Total COGS $]
+GM $ target = 
+sum(NsGmTarget[gm_target])
+GM % target = 
+DIVIDE([GM $ target],SUM(NsGmTarget[ns_target]),0)
+GM % LY = 
+CALCULATE([GM %]        ,
+SAMEPERIODLASTYEAR(dim_date[date]))
+GM % filter = IF(SELECTEDVALUE(Parameter[Parameter])<=[gap] ,1,0) GM % = DIVIDE([GM $],[NS $],0) GM % BM = 
+SWITCH(TRUE(),
+SELECTEDVALUE('Set BM'[id])=1,[GM % LY],
+SELECTEDVALUE('Set BM'[id])=2,[GM % target]) GM / Unit = DIVIDE([GM $],[Qty],0) gap = 
+[GM % target]-[GM %]  Freight Cost $ = SUM(fact_sales_forecastVSreal[freigt_cost]) forecast_QTY = 
+var lsalesdate = MAX(LastSalesMonth[LastSalesMonth])  //last sales date
+return
+CALCULATE(SUM(fact_forecast_monthly[forecast_quantity]),
+fact_forecast_monthly[date]<=lsalesdate)             //limiting forecast to last sales date Forecast Accuracy % Ly = 
+CALCULATE([Forecast Accuracy %],SAMEPERIODLASTYEAR(dim_date[date])) Forecast Accuracy % = IF(_Key_measures[ABS error %]<>BLANK(),
+1-[ABS error %],BLANK()) Forecast Accuracy % = IF(_Key_measures[ABS error %]<>BLANK(),
+1-[ABS error %],BLANK()) ABS ERROR = 
+SUMX(DISTINCT(dim_date[Month]),
+SUMX(DISTINCT(dim_product[product_code]),
+ABS([Net Error])
+)) ABS error % = 
+DIVIDE([ABS ERROR],[forecast_QTY],0) Abs error LY = 
+CALCULATE([ABS ERROR],SAMEPERIODLASTYEAR(dim_date[date])) Ads & promotion = SUM(fact_sales_forecastVSreal[ads_promotion]) BM message = 
+IF([NS $ BM] = BLANK() || [GM % BM] = BLANK() || [Net Profit % BM] = BLANK() ," BM Target(s) is not available for selected filer" ,"") CUSTOMER & PRODUCT FILTER = 
+ISCROSSFILTERED(dim_product[product]) ||
+ISFILTERED(dim_customer[customer])
+Net Profit % BM = 
+SWITCH(TRUE(),
+SELECTEDVALUE('Set BM'[id])=1,[net profit % LY], 
+SELECTEDVALUE('Set BM'[id])=2,[Net profit % target]) net profit % LY = 
+CALCULATE([Net_profit %],
+SAMEPERIODLASTYEAR(dim_date[date])) Net profit % target = DIVIDE(
+[NP $ target],SUM(NsGmTarget[ns_target]),0) Net_profit % = DIVIDE([Net_profit $],[NS $],0) RC % = 
+DIVIDE([NS $], CALCULATE([NS $],ALL(dim_market),ALL(dim_customer),ALL(dim_product))) Qty = SUM(fact_sales_forecastVSreal[Qty]) Pre Invoice Deduction $ = [GS $]-[NIS $] Post Invoice other Deduction $ = sum(fact_sales_forecastVSreal[post_invoice other deductions amt]) Post Invoice Deduction $ = 
+SUM(fact_sales_forecastVSreal[post_invoice_deductions])
+ Performance Visual Title = 'P & L Rows'[Selected P & L] &  " Performance Over Time" P & L Values LY = CALCULATE([P & L Values],SAMEPERIODLASTYEAR(dim_date[date])) Performance Visual Title = 'P & L Rows'[Selected P & L] &  " Performance Over Time" P & L Values LY = CALCULATE([P & L Values],SAMEPERIODLASTYEAR(dim_date[date])) Other Ops expense = 
+SUM(fact_sales_forecastVSreal[Other_operational_expense]) P & L Values LY = CALCULATE([P & L Values],SAMEPERIODLASTYEAR(dim_date[date])) P & L Values = 
+
+var res = SWITCH(
+TRUE(),
+MAX('P & L Rows'[Order]) =1, [GS $]/1000000,
+MAX('P & L Rows'[Order])  =2, [Pre Invoice Deduction $]/1000000,
+MAX('P & L Rows'[Order])  =3, [NIS $]/1000000,
+MAX('P & L Rows'[Order])  =4, [Post Invoice Deduction $]/1000000,
+MAX('P & L Rows'[Order]) =5, [Post Invoice other Deduction $]/1000000,
+MAX('P & L Rows'[Order])=6,[Post Invoice Deduction $]/1000000+[Post Invoice other Deduction $]/1000000,
+MAX('P & L Rows'[Order])  =7, [NS $]/1000000,
+MAX('P & L Rows'[Order]) =8, [Manufacturing Cost $]/1000000,
+MAX('P & L Rows'[Order])  =9, [Freight Cost $]/1000000,
+MAX('P & L Rows'[Order])  =10, [Other Cost $]/1000000,
+MAX('P & L Rows'[Order])  =11,[Total COGS $]/1000000,
+MAX('P & L Rows'[Order]) =12, [GM $]/1000000,
+MAX('P & L Rows'[Order]) =13, [GM %]*100,
+MAX('P & L Rows'[Order]) =14, [GM / Unit],
+MAX('P & L Rows'[Order]) =15, [Operational Expense $]/1000000,
+MAX('P & L Rows'[Order]) =16, [Net_profit $]/1000000,
+MAX('P & L Rows'[Order]) =17, [Net_profit %]*100)
+
+return
+IF(HASONEVALUE('P & L Rows'[Description]),res , [NS $]/1000000
+) 
+P & L Values LY = CALCULATE([P & L Values],SAMEPERIODLASTYEAR(dim_date[date])) P & L TARGET = 
+var res = SWITCH(
+TRUE(),
+MAX('P & L Rows'[Order])  =7, [NS $ target]/1000000,
+MAX('P & L Rows'[Order]) =12, [GM $ target]/1000000,
+MAX('P & L Rows'[Order]) =13, [GM % target]*100,
+MAX('P & L Rows'[Order]) =17, [Net profit % target]*100)
+
+return
+IF(HASONEVALUE('P & L Rows'[Description]),res , [NS $ target]/1000000
+) P & L BM = 
+SWITCH(TRUE(),
+SELECTEDVALUE('Set BM'[id])=1,[P & L Values LY],
+SELECTEDVALUE('Set BM'[id])=2,[P & L TARGET]) Other Ops expense = 
+SUM(fact_sales_forecastVSreal[Other_operational_expense]) Other Cost $ = SUM(fact_sales_forecastVSreal[other_cost]) NS $ target = 
+VAR TGT = SUM(NsGmTarget[ns_target])
+RETURN
+IF([CUSTOMER & PRODUCT FILTER],BLANK(),TGT) NS $ LS = CALCULATE([NS $],SAMEPERIODLASTYEAR(dim_date[date])) NS $ BM = 
+SWITCH(TRUE(),
+SELECTEDVALUE('Set BM'[id])=1,[NS $ LS],
+SELECTEDVALUE('Set BM'[id])=2,[NS $ target]) NS $ = 
+SUM(fact_sales_forecastVSreal[net_sales]) 
